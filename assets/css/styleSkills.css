@@ -1,0 +1,129 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #31285c;
+}
+.circle
+{
+  transform-style: preserve-3d;
+  animation: animate 8s linear infinite;
+  transform: perspective(1000px) rotateY(360deg) rotateX(15deg);
+}
+
+.circle .char
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  color: #fff;
+  font-size: 4rem;
+  padding: 7px 1rem;
+  border-top: 10px solid #390057;
+  border-bottom: 10px solid #390057;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transform: rotateY(calc(var(--char-index)*9deg)) translateZ(250px);
+  background: #af19ff;
+  text-shadow: 500px 150px 0 rgba(255,255,255,0.5),
+   300px 250px 10px rgba(255,255,255,0.5),
+    600px 50px 30px rgba(255,255,255,0.5),
+    150px 600px  rgba(255,255,255,0.5),
+    400px 350px 20px rgba(255,255,255,0.5),
+    200px 500px 15px rgba(255,255,255,0.5),
+    500px -150px 0 rgba(255,255,255,0.5),
+    300px -250px 10px rgba(255,255,255,0.5),
+    600px -50px 30px rgba(255,255,255,0.5),
+    150px -600px 0 rgba(255,255,255,0.5),
+    450px -500px 20px rgba(255,255,255,0.5),
+    200px -375px 15px rgba(255,255,255,0.5);
+}
+
+nav
+{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left:0;
+  height: 5rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0 100px;
+  box-sizing: border-box;
+  z-index: 999;
+}
+nav .brand
+{
+  float: left;
+  height: 100%;
+  line-height: 4rem;
+}
+nav .brand h3
+{
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+nav ul
+{
+  float: right;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li
+{
+  list-style: none;
+}
+
+nav ul li a
+{
+  position: relative;
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  box-sizing: border-box;
+  padding: 0px 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-size:1.8rem;
+}
+
+nav ul li a::before
+{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform-origin: right;
+  transform: scaleY(0)  rotateX(45deg);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+nav ul li a:hover::before
+{
+  transform-origin: left;
+  transform: scaleY(1) rotateX(-45deg);
+}
+nav ul li a:hover
+{
+  color: #262626;
+}

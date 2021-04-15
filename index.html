@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Scroll me</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+
+</head>
+<body>
+
+
+
+  <section class="bg">
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
+    <div class="scrollTop" onclick="scrollToTop();"></div>
+    <nav>
+      <div class="brand">
+        <h3>MF</h3>
+      </div>
+      <ul>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\index.html">Home</a></li>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\about.html">About</a></li>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\skills.html">Skills</a></li>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="greet">
+      <h2>Hello, I am Yevgeniy!</h2>
+    </div>
+
+    <div class="box">
+      <div class="imgBx">
+        <img src="https://img.icons8.com/plasticine/2x/person-male.png" alt="person">
+      </div>
+      <div class="content">
+        <h3>Portfolio</h3>
+        <p> This is my personal website-portfolio.<br> I will illustrate information about myself and my environment </p>
+      </div>
+    </div>
+    <span class="skewedOne"></span>
+    <span class="skewedTwo"></span>
+  </section>
+
+    <section>
+
+    </section>
+
+  <section>
+    <h2 class="citateHeading">My motivation</h2>
+    <div class="card">
+        <div class="face front a">
+          <p>«A dream doesn’t become reality through magic; it takes sweat, determination, and hard work»</p>
+        </div>
+        <div class="face back a">
+          <h2>Colin Powell</h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="face front b">
+          <p>«Do the difficult things while they are easy and do the great things while they are small. A journey of a thousand miles begins with a single step.»</p>
+        </div>
+        <div class="face back b">
+          <h2> Lao Tzu</h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="face front c">
+          <p>«It doesn’t matter how slowly you go as long as you do not stop.»</p>
+        </div>
+        <div class="face back c">
+          <h2>Confucius</h2>
+        </div>
+    </div>
+
+
+<footer style="color:white; padding-top:50px">Made by Yevgeniy in 2021</footer>
+
+  </section>
+
+  <script type="text/javascript">
+    const skewedOne = document.querySelector('.skewedOne');
+    const skewedTwo = document.querySelector('.skewedTwo');
+    window.addEventListener('scroll', function() {
+      const value1 = -15 + window.scrollY / 45;
+      skewedOne.style.transform = "skewY(" + value1 + "deg)";
+    })
+    window.addEventListener('scroll', function() {
+      const value2 = 30 - window.scrollY / 22.5;
+      skewedTwo.style.transform = "skewY(" + value2 + "deg)";
+    })
+  </script>
+  <script type="text/javascript">
+    let progress = document.getElementById('progressbar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+      let progressHeight = (window.pageYOffset / totalHeight) * 100;
+      progress.style.height = progressHeight + '%';
+    }
+  </script>
+  <script type="text/javascript">
+      window.addEventListener('scroll',function(){
+        var scroll = document.querySelector(".scrollTop");
+        scroll.classList.toggle('active',scrollY>500);
+      });
+      function scrollToTop(){
+        window.scrollTo({
+          top:0,
+          behavior:'smooth'
+        })
+      }
+  </script>
+
+</body>
+
+</html>

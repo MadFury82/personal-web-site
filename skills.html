@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html lang="en" dir="ltr">
+
+ <head>
+   <meta charset="utf-8">
+   <title>Circle-moving-text</title>
+  <link rel="stylesheet" href="./assets/css/styleSkills.css">
+ </head>
+
+ <body>
+   <nav>
+     <div class="brand">
+       <h3>MF</h3>
+     </div>
+     <ul>
+       <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\index.html">Home</a></li>
+       <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\about.html">About</a></li>
+       <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\skills.html">Skills</a></li>
+       <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\contact.html">Contact</a></li>
+     </ul>
+   </nav>
+   <div class="circle" data-splitting>
+     Node.js-Express-MongoDB-Security-Vue.js-
+   </div>
+   <script src="splitting.js" charset="utf-8"></script>
+   <script>
+    Splitting();
+   </script>
+   <script type="text/javascript">
+    let circle = document.querySelector('.circle');
+    window.onmousemove = function(e) {
+      let x = e.clientX / -2;
+      circle.style.transform = "perspective(1000px) rotateY(" + x + "deg) rotateX(15deg)";
+    }
+   </script>
+   
+ </body>
+
+ </html>

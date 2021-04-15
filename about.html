@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About-Page</title>
+    <link rel="stylesheet" href="./assets/css/stylesAbout.css">
+  </head>
+  <body>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
+    <div class="scrollTop" onclick="scrollToTop();"></div>
+    <nav id="navbar">
+      <div class="brand">
+        <h3>MF</h3>
+      </div>
+      <ul>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\index.html">Home</a></li>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\about.html">About</a></li>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\skills.html">Skills</a></li>
+        <li><a href="C:\Users\MadFury\Desktop\CSS & JS PRACTICE\transform-effect-on-scroll\contact.html">Contact</a></li>
+      </ul>
+    </nav>
+      <div class="bio">
+
+          <div class="card" id="frst">
+            <span></span>
+            <h2>My name Yevgeniy</h2>
+            <p>I am 16 years old, I was born in 2004, in Kazakhstan, and up untill now I live here. I like to communicate with other people, and know several languages, russian is my native language and i can speak very well with it, but my English is not bad too, also I have a little knowledge of kazakh</p>
+          </div>
+
+          <div class="card" id="scnd">
+            <span></span>
+            <h2>My education</h2>
+            <p>From childhood I liked study, especially math, I was in common school for 7 year, but then went to another place (BIL), where I got a middle education, and I going to finish 11 classes, after this go to university(computer science) </p>
+          </div>
+
+          <div class="card" id="thrst">
+            <span></span>
+            <h2>My qualities</h2>
+            <p>I think my best quality is that i'm hardworking, responsible and always try to help, also I asked my friends to tell something about me: sincere, clever, kind, collaborative, creative, credible</p>
+          </div>
+      </div>
+    <div class="container">
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Playing guitar</h2>
+          <p>This is my favorite hobby, I learnt how to play a guitar by myself so my playing is not awesome, but anyway not bad. I like play classical and spanish music,however it is very hard </p>
+          <a href="https://www.youtube.com/watch?v=oEfFbuT3I6A">My favorite piece</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Reading books</h2>
+          <p>In my opinion it is very useful to read books, there is so many merits of it, I started to cognize world of books about 2 years ago and read about 100 books, but this is only beginning of my journey</p>
+          <a href="https://en.wikipedia.org/wiki/Martin_Eden">My favorite book</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Math</h2>
+          <p>I spend a lot of times on math, and after some time new world of very uncommon and beautiful math opened to me , where every question is like challenge and often I spent several days to realize and solve problem, even it is hard i love Math.  </p>
+          <a href="https://en.wikipedia.org/wiki/Diophantine_equation">My favorite part of Math</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('scroll',function(){
+        var scroll1 = document.querySelector("#frst");
+        var scroll2 = document.querySelector("#scnd");
+        var scroll3 = document.querySelector("#thrst");
+        var navbar = document.querySelector("#navbar");
+        scroll1.classList.toggle('active',scrollY>300);
+        scroll2.classList.toggle('active',scrollY>600);
+        scroll3.classList.toggle('active',scrollY>900);
+        navbar.classList.toggle('active',scrollY>1000)
+      });
+    </script>
+
+  </body>
+</html>

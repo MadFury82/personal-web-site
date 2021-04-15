@@ -1,0 +1,381 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  background: #323232;
+  width: 100%;
+  min-height: 100vh;
+}
+.bg
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#ff5e00,#9502d4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+  padding-top: 200px;
+}
+.bg h2
+{
+  position:relative;
+  font-size: 5rem;
+  color: white;
+  bottom: 18rem;
+}
+section img
+{
+  position: absolute;
+  display: flex;
+}
+
+.skewedOne
+{
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: #323232;
+  transform: skewY(-15deg);
+  transform-origin: top left;
+}
+.skewedTwo
+{
+  position: absolute;
+  bottom: -100%;
+  right: 50%;
+  width: 100%;
+  height: 100%;
+  background: #323232;
+  transform: skewY(30deg);
+  transform-origin: top right;
+}
+section
+{
+  padding: 100px;
+}
+
+section  h2
+{
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+section p
+{
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem
+}
+
+.box
+{
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 5px 5px 80px #888888;
+  margin: 10px 10px;
+  transition: 0.5s;
+}
+.box .imgBx
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#9502d4,#0080b3);
+  transition: 0.5s;
+  justify-content: center;
+  display: flex;
+}
+.box .content
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+}
+.box .content h3
+{
+  margin-top: 30px;
+  font-size: 2rem;
+  font-family: 'consolas';
+  color: #fff;
+}
+.box:hover
+{
+  transform: translate(0 ,-30px);
+}
+
+::-webkit-scrollbar
+{
+  width: 0;
+}
+#scrollPath
+{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.05);
+}
+#progressbar
+{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 10px;
+  background: linear-gradient(to top, #008aff,#00ffe7);
+  animation: animate 15s linear infinite;
+  z-index: 1000;
+}
+@keyframes animate {
+  0%,100%{filter: hue-rotate(0deg);}
+  50%{filter: hue-rotate(360deg);}
+}
+#progressbar::before
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #008aff,#00ffe7);
+  filter: blur(10px);
+}
+#progressbar::after
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #008aff,#00ffe7);
+  filter: blur(30px);
+}
+
+
+.scrollTop
+{
+  position: fixed;
+  bottom: 800px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-image: url("https://img.icons8.com/nolan/2x/thick-arrow-pointing-up--v2.png");
+  background-size: 60px;
+  border-radius: 50%;
+  background-position: center;
+  cursor: pointer;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.scrollTop.active
+{
+  bottom: 40px;
+  visibility:visible;
+  opacity: 1;
+}
+section {
+  text-align:center;
+}
+.citateHeading
+{
+  color: #fff;
+}
+
+.card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  display: inline-block;
+  margin: 20px;
+}
+.card p , .card h2
+{
+  transform: perspective(500px) translateZ(35px);
+  width: 80%;
+
+}
+.card .face
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 2s ease-in-out;
+  color: #000;
+}
+.card .face.front.a
+  {
+    background: linear-gradient(45deg,#f7ff1c,#73ff00);
+    color: #fff;
+    transform: perspective(500px) rotateY(0deg);
+  }
+
+.card:hover .face.front.a
+{
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.card .face.back.a
+{
+  background: linear-gradient(45deg,#73ff00,#f7ff1c);
+  transform: perspective(500px) rotateY(180deg);
+}
+.card:hover .face.back.a
+{
+  transform: perspective(500px) rotateY(360deg);
+}
+
+.card .face.front.b
+  {
+
+    background: linear-gradient(45deg,#27f2f2,#5821fc);
+    color: #000;
+    transform: perspective(1000px) rotateX(0deg);
+  }
+
+.card:hover .face.front.b
+{
+    transform: perspective(1000px) rotateX(180deg);
+}
+
+.card .face.back.b
+{
+  color: #fff;
+  background: linear-gradient(45deg,#5821fc,#27f2f2);
+  transform: perspective(1000px) rotateX(180deg);
+}
+
+
+
+.card:hover .face.back.b
+{
+  transform: perspective(1000px) rotateX(360deg);
+}
+
+.card .face.front.c
+  {
+    background: linear-gradient(45deg,#ff0f0f,#ff33da);
+    transform: perspective(500px) rotateY(0deg);
+    color: #fff;
+  }
+
+.card:hover .face.front.c
+{
+    transform: perspective(500px) rotateY(-180deg);
+}
+
+.card .face.back.c
+{
+  background: linear-gradient(45deg,#ff33da,#ff0f0f);
+  transform: perspective(500px) rotateY(-180deg);
+}
+
+.card:hover .face.back.c
+{
+  transform: perspective(500px) rotateY(-360deg);
+}
+nav
+{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left:0;
+  height: 4rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0 100px;
+  box-sizing: border-box;
+  z-index: 999;
+}
+nav .brand
+{
+  float: left;
+  height: 100%;
+  line-height: 4rem;
+}
+nav .brand h3
+{
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+nav ul
+{
+  float: right;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li
+{
+  list-style: none;
+}
+
+nav ul li a
+{
+  position: relative;
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  box-sizing: border-box;
+  padding: 0px 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-size: 1.3rem;
+}
+
+nav ul li a::before
+{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+nav ul li a:hover::before
+{
+  transform-origin: left;
+  transform: scaleX(1);
+}
+nav ul li a:hover
+{
+  color: #262626;
+}
